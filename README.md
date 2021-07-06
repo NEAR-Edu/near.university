@@ -1,4 +1,6 @@
-# site
+# near.university
+
+The one place where you can find the fastest way to learn about NEAR Protocol
 
 ## Project setup
 ```
