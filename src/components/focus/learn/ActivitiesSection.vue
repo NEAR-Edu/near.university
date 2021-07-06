@@ -1,22 +1,25 @@
 <template>
   <div class="py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 ">
+    <div class="grid grid-cols-1 lg:grid-cols-2 ">
       <div class="rounded-lg bg-gray-200 overflow-hidden shadow divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px">
-        <div v-for="(action, actionIdx) in actions" :key="action.title" :class="[actionIdx === 0 ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none' : '', actionIdx === 1 ? 'sm:rounded-tr-lg' : '', actionIdx === actions.length - 2 ? 'sm:rounded-bl-lg' : '', actionIdx === actions.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '', 'relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500']">
+        <div v-for="(card, cardIdx) in cards" :key="card.title" :class="[`hover:bg-${card.iconFG}-light`, cardIdx === 0 ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none' : '', cardIdx === 1 ? 'sm:rounded-tr-lg' : '', cardIdx === cards.length - 2 ? 'sm:rounded-bl-lg' : '', cardIdx === cards.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '', 'relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500']">
           <div>
-            <span :class="[action.iconBackground, action.iconForeground, 'rounded-lg inline-flex p-3 ring-4 ring-white']">
-              <component :is="action.icon" class="h-6 w-6" aria-hidden="true" />
+            <span :class="[card.iconBG, `text-${card.iconFG}`, 'rounded-lg inline-flex p-3 ring-4 ring-white']">
+              <component :is="card.icon" class="h-6 w-6" aria-hidden="true" />
             </span>
           </div>
-          <div class="mt-8">
-            <h3 class="text-lg font-medium">
-              <a :href="action.href" class="focus:outline-none">
+          <div class="mt-6">
+            <h3 class="text-lg font-medium  ">
+              <a :href="card.href" class="focus:outline-none">
                 <!-- Extend touch target to entire panel -->
                 <span class="absolute inset-0" aria-hidden="true" />
-                {{ action.title }}
+                {{ card.title }}
               </a>
+              <div class="text-lg font-extralight text-gray-900 hover:text-gray-100">
+                {{ card.content }}
+              </div>
             </h3>
-            <p class="mt-2 text-sm text-gray-500">
+            <p class="mt-2 text-sm text-gray-500  hover:text-gray-100">
               Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
             </p>
           </div>
@@ -38,55 +41,61 @@
 import { UserGroupIcon, MicrophoneIcon, TerminalIcon, BookOpenIcon, ChatAlt2Icon, VideoCameraIcon } from '@heroicons/vue/outline';
 
 // prettier-ignore
-const actions = [
+const cards = [
   {
     title: 'Read',
+    content: '12 resources',
     href: '#',
     icon: BookOpenIcon,
-    iconForeground: 'text-near-royal',
-    iconBackground: 'bg-gray-50'
+    iconFG: 'near-royal',
+    iconBG: 'bg-gray-50',
   },
   {
     title: 'Practice',
+    content: '6 workshops',
     href: '#',
     icon: TerminalIcon,
-    iconForeground: 'text-near-orange',
-    iconBackground: 'bg-gray-50'
+    iconFG: 'near-orange',
+    iconBG: 'bg-gray-50'
   },
   {
     title: 'Watch',
+    content: '7 playlists',
     href: '#',
     icon: VideoCameraIcon,
-    iconForeground: 'text-near-red',
-    iconBackground: 'bg-gray-50'
+    iconFG: 'near-red',
+    iconBG: 'bg-gray-50'
   },
   {
     title: 'Listen',
+    content: '3 podcasts',
     href: '#',
     icon: MicrophoneIcon,
-    iconForeground: 'text-near-yellow',
-    iconBackground: 'bg-gray-50'
+    iconFG: 'near-yellow',
+    iconBG: 'bg-gray-50'
   },
   {
     title: 'Pair',
+    content: '27 registered',
     href: '#',
     icon: ChatAlt2Icon,
-    iconForeground: 'text-near-green',
-    iconBackground: 'bg-gray-50'
+    iconFG: 'near-green',
+    iconBG: 'bg-gray-50'
   },
   {
     title: 'Attend',
+    content: '3 courses',
     href: '#',
     icon: UserGroupIcon,
-    iconForeground: 'text-near-blue',
-    iconBackground: 'bg-gray-50'
+    iconFG: 'near-blue',
+    iconBG: 'bg-gray-50'
   }
 ];
 
 export default {
   setup() {
     return {
-      actions
+      cards
     };
   }
 };

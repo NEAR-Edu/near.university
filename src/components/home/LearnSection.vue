@@ -2,7 +2,7 @@
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
     <!-- Card -->
     <div v-for="card in cards" :key="card.title" class="bg-white overflow-hidden shadow rounded-lg">
-      <div class="p-4">
+      <div class="p-6">
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <span :class="[card.iconBG, card.iconFG, 'rounded-lg inline-flex p-3 ring-4 ring-white']">

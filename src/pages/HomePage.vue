@@ -1,24 +1,18 @@
 <template>
   <ContainerTitle />
   <main>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="px-4 py-8 sm:px-0">
         <div class="h-full">
           <StatisticsSection />
           <SectionDivider text="Learn" />
           <LearnSection />
           <SectionDivider text="Earn" />
-          <div>
-            overview of earning
-          </div>
+          <EarnSection />
           <SectionDivider text="Connect" />
-          <div>
-            overview of connecting
-          </div>
+          <ConnectSection />
           <SectionDivider text="Certify" />
-          <div>
-            overview of certifying
-          </div>
+          <CertifySection />
         </div>
       </div>
     </div>
@@ -30,14 +24,20 @@ import SectionDivider from '@/components/base/SectionDivider.vue';
 
 import StatisticsSection from '@/components/home/StatisticsSection.vue';
 import LearnSection from '@/components/home/LearnSection.vue';
+import EarnSection from '@/components/home/EarnSection.vue';
+import ConnectSection from '@/components/home/ConnectSection.vue';
+import CertifySection from '@/components/home/CertifySection.vue';
 
 export default {
   name: 'HomePage',
   components: {
+    CertifySection,
+    ConnectSection,
     ContainerTitle,
+    EarnSection,
+    LearnSection,
     SectionDivider,
-    StatisticsSection,
-    LearnSection
+    StatisticsSection
   }
 };
 </script>

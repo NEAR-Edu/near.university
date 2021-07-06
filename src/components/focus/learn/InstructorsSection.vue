@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-6 pt-8  flex justify-center">
+  <div>
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
       <div class="space-y-5 sm:space-y-4">
         <h2 class="text-3xl font-extrabold text-blue-gray-600  tracking-tight sm:text-4xl">Meet our instructors</h2>
